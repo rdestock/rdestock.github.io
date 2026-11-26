@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Name – Page Title</title>
+<meta name="description" content="A short description of this page.">
+<style>
+  /* ---------- Customize here ---------- */
+  :root {
+    --bg: #f7f8fa;
+    --text: #1c2430;
+    --muted: #5a6575;
+    --accent: #1f4e8c;
+    --rule: #d5dbe3;
+    --code-bg: #e9edf2;
+    --measure: 68ch;           /* line length */
+    --font-body: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c;
+      --text: #e3e8ee;
+      --muted: #9aa5b4;
+      --accent: #8db4ee;
+      --rule: #2b333f;
+      --code-bg: #1c232d;
+    }
+  }
+
+  /* ---------- Base ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+  }
+  .wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1.25rem; }
+
+  a { color: var(--accent); text-underline-offset: 0.18em; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 1rem; top: 1rem; background: var(--bg); padding: 0.5rem 0.75rem; z-index: 10; }
+
+  /* ---------- Header & nav ---------- */
+  header { border-bottom: 1px solid var(--rule); padding: 1.5rem 0 1rem; }
+  .site-name { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; margin: 0; }
+  .site-name a { color: inherit; text-decoration: none; }
+  .tagline { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; }
+  nav ul { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; font-family: var(--font-ui); font-size: 0.9rem; }
+  nav a { color: var(--muted); text-decoration: none; padding: 0.15rem 0; border-bottom: 2px solid transparent; }
+  nav a:hover { color: var(--text); }
+  nav a[aria-current="page"] { color: var(--text); border-bottom-color: var(--accent); }
+
+  /* ---------- Content ---------- */
+  main { padding: 2.5rem 0 3rem; }
+  h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; text-wrap: balance; }
+  h1 { font-size: 2.4rem; margin: 0 0 0.5rem; }
+  h2 { font-size: 1.5rem; margin: 2.75rem 0 0.75rem; }
+  h3 { font-size: 1.15rem; margin: 2rem 0 0.5rem; }
+  p, ul, ol, blockquote, pre, table { margin: 0 0 1.1rem; }
+  .meta { color: var(--muted); font-family: var(--font-ui); font-size: 0.85rem; margin: 0 0 1.75rem; }
+  .lead { font-size: 1.2rem; color: var(--muted); }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin-bottom: 0.3rem; }
+
+  blockquote { border-left: 3px solid var(--accent); padding: 0.1rem 0 0.1rem 1.1rem; color: var(--muted); font-style: italic; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+  code, pre { font-family: var(--font-mono); font-size: 0.85em; background: var(--code-bg); border-radius: 4px; }
+  code { padding: 0.1em 0.35em; }
+  pre { padding: 0.9rem 1rem; overflow-x: auto; line-height: 1.5; }
+  pre code { padding: 0; background: none; }
+
+  .table-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-family: var(--font-ui); font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 600; }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--rule); padding: 1.5rem 0 3rem; color: var(--muted); font-family: var(--font-ui); font-size: 0.85rem; }
+  footer p { margin: 0 0 0.4rem; }
+
+  @media (max-width: 480px) {
+    html { font-size: 106.25%; }
+    h1 { font-size: 2rem; }
+  }
+  @media print {
+    body { background: #fff; color: #000; }
+    nav, .skip { display: none; }
+    a { color: inherit; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap">
+    <p class="site-name"><a href="/">Site Name</a></p>
+    <p class="tagline">A one-line description of what this site is about.</p>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/articles.html">Articles</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <article>
+      <h1>Page title goes here</h1>
+      <p class="meta">Updated November 26, 2026</p>
+
+      <p class="lead">Use this paragraph to say, in a sentence or two, what the page covers and who it is for.</p>
+
+      <p>Body text sits in a single column that is about 68 characters wide, which keeps lines comfortable to read on any screen. Replace this text with your own. <a href="#">Links are underlined</a> so they are easy to spot.</p>
+
+      <h2>A section heading</h2>
+      <p>Each section starts with a heading. Keep paragraphs short and specific. The type scales with the browser’s font size, so readers who increase their default text size get larger text.</p>
+
+      <h3>A subsection</h3>
+      <ul>
+        <li>Bulleted lists work for items with no set order.</li>
+        <li>Keep each item to a line or two.</li>
+        <li>Nest lists only when you need to.</li>
+      </ul>
+
+      <ol>
+        <li>Numbered lists work for steps.</li>
+        <li>Each step should start with a verb.</li>
+        <li>Stop when the task is done.</li>
+      </ol>
+
+      <blockquote>
+        <p>Quotations are set off with a rule on the left and slightly muted text.</p>
+      </blockquote>
+
+      <h2>Code and data</h2>
+      <p>Inline code looks like <code>this</code>. Blocks scroll sideways instead of breaking the layout:</p>
+<pre><code>const greeting = "Hello, world";
+console.log(greeting);</code></pre>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Detail</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>First</td><td>Short description</td><td>Done</td></tr>
+            <tr><td>Second</td><td>Short description</td><td>In progress</td></tr>
+            <tr><td>Third</td><td>Short description</td><td>Planned</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <p>End the page with a clear next step, such as a link to <a href="/contact.html">get in touch</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Site Name. All rights reserved.</p>
+    <p><a href="/privacy.html">Privacy</a> &nbsp; <a href="/contact.html">Contact</a></p>
+  </div>
+</footer>
+</body>
+</html>
